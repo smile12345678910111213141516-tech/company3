@@ -658,34 +658,39 @@ footer p {
 
 @media (max-width: 640px) {
   nav { 
-    height: auto; 
-    min-height: 60px; 
+    height: 60px;
     padding: 10px 16px;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .nav-logo img {
-    height: 40px;
+    height: 36px;
   }
   
   .nav-links { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    width: 100%;
-    margin-top: 10px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: calc(100vw - 120px);
+    padding: 4px 0;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   
   .nav-links a {
-    text-align: center;
-    font-size: 0.8125rem;
-    padding: 8px 4px;
-    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.1);
   }
   
   .nav-links a::after {
