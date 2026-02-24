@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0a0f1a" />
 
 <title>Repowering Partners | Acquiring & Revitalizing Solar Assets</title>
 <meta name="description" content="Repowering Partners acquires aging, underperforming, or distressed solar assets across the United States and restores them to peak performance." />
+<meta property="og:title" content="Repowering Partners | Acquiring & Revitalizing Solar Assets" />
+<meta property="og:description" content="Repowering Partners acquires aging, underperforming, or distressed solar assets and restores them to peak performance." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280_jpeg.webp" />
 
 <!-- SEO -->
 <meta name="robots" content="index, follow">
@@ -45,6 +50,24 @@ body {
   background: var(--bg-light);
   padding-top: 0;
   overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 12px;
+  background: #fff;
+  color: var(--bg-dark);
+  padding: 8px 14px;
+  border-radius: 6px;
+  z-index: 2000;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 /* Typography */
@@ -212,6 +235,13 @@ nav a:hover {
 
 nav a:hover::after {
   width: 100%;
+}
+
+nav a:focus-visible,
+.btn:focus-visible,
+.cta button:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 3px;
 }
 
 /* Header Hero */
@@ -467,7 +497,7 @@ section h2::after {
 }
 
 /* Insight & Operations Sections */
-#industry, #operations-content {
+.insight-panel, #operations-content {
   background: linear-gradient(135deg, var(--bg-accent) 0%, #fff 100%);
   border-left: 6px solid var(--primary);
   border-radius: 16px;
@@ -705,6 +735,15 @@ footer p {
   #industry, #operations-content { padding: 30px 20px; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Scroll reveal on load */
 .reveal {
   opacity: 0;
@@ -720,6 +759,7 @@ footer p {
 </head>
 
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Navbar -->
 <nav id="navbar">
@@ -770,7 +810,7 @@ footer p {
   </div>
 </div>
 
-<main>
+<main id="main-content">
   <!-- About -->
   <section id="about" class="reveal">
     <h2>About Repowering Partners</h2>
@@ -781,7 +821,7 @@ footer p {
         <p>As the first generation of U.S. utility-scale solar projects matures, many assets face declining production, outdated equipment, and increasing operational complexity. Our mission is to unlock hidden value in these legacy systems.</p>
         <p>We provide detailed asset evaluation, helping owners understand the current performance, identify areas for improvement, and maximize long-term financial returns. This includes analyzing energy output, component health, maintenance history, and regional incentive programs.</p>
       </div>
-      <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India.jpg" alt="Utility-scale solar energy installation">
+      <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India.jpg" alt="Utility-scale solar energy installation" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -816,7 +856,7 @@ footer p {
   <!-- Industry -->
   <section id="industry" class="reveal">
     <h2>Industry Insight</h2>
-    <div id="industry">
+    <div class="insight-panel">
       <p>Many U.S. solar projects commissioned between 2010 and 2016 were built under early design assumptions and evolving O&M practices, leading to structural underperformance.</p>
       <p>Understanding regional incentives, federal programs, and market trends is crucial to accurately valuing solar assets. Repowering Partners combines market intelligence with on-the-ground performance analysis to identify opportunities others may overlook.</p>
     </div>
@@ -839,7 +879,7 @@ footer p {
           <p>Our operational insights include detailed site evaluations, production forecasting, and cost optimization to ensure each asset achieves its full potential.</p>
         </div>
       </div>
-      <img src="./images/installing-solar-panels.webp" alt="Solar technician performing system maintenance">
+      <img src="./images/installing-solar-panels.webp" alt="Solar technician performing system maintenance" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -867,11 +907,11 @@ footer p {
       <input type="hidden" name="_subject" value="New Solar Asset Inquiry">
       <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com">
 
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+      <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
       <input type="hidden" name="_replyto" value="%email%">
 
-      <textarea name="message" placeholder="Tell us about your solar asset..." rows="5" required></textarea>
+      <textarea name="message" placeholder="Tell us about your solar asset..." rows="5" autocomplete="off" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
