@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Repowering Partners</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- 3D Vortex Background -->
+    <div class="background-container">
+        <svg id="vortex-bg"></svg>
+        <div class="vignette-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Repowering <span>Partners</span></a>
+            
+            <button class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="container page-content">
+        <div class="contact-layout">
+            <div>
+                <div class="badge">
+                    <div class="badge-dot"></div>
+                    Secure Channel
+                </div>
+                <h1>Initiate<br>Dialogue.</h1>
+                <p class="lead" style="margin-bottom: 40px;">
+                    Ready to transition your asset? Connect with our acquisitions team to discuss the valuation and seamless transfer of your solar infrastructure.
+                </p>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px;">Corporate Communications</h4>
+                    <p style="font-size: 1.1rem; font-weight: 500;">acquisitions@repoweringpartners.com</p>
+                </div>
+                <div>
+                    <h4 style="font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px;">Headquarters</h4>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary);">700 Energy Center Blvd<br>Sector 4, TX 78701</p>
+                </div>
+            </div>
+
+            <div class="glass-panel contact-form-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Operator / Entity Name</label>
+                        <input type="text" id="name" required placeholder="Enter company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Contact Email</label>
+                        <input type="email" id="email" required placeholder="email@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="asset">Asset Capacity (MW)</label>
+                        <input type="text" id="asset" placeholder="e.g., 5.5 MW">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Asset Details</label>
+                        <textarea id="message" required placeholder="Brief description of the facility location and current operational status..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Transmit Data</button>
+                </form>
+                
+                <div id="form-success">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; margin-bottom: 20px;">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <h3 style="margin-bottom: 12px; font-size: 1.5rem;">Data Received</h3>
+                    <p style="color: var(--text-secondary);">Our acquisitions protocol has been initiated. A representative will review your asset details and contact you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>REPOWERING PARTNERS &copy; 2026</div>
+            <div>SYSTEM.STATUS: <span style="color: var(--accent);">OPERATIONAL</span></div>
+        </div>
+    </footer>
+
+</body>
+</html>

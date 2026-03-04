@@ -1,355 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Repowering Partners | Solar Asset Acquisitions & Performance Recovery</title>
-<meta name="description" content="Repowering Partners acquires and improves aging, underperforming, and distressed solar assets through disciplined diligence, technical upgrades, and long-term operations." />
-<meta name="robots" content="index, follow" />
-<meta name="author" content="Repowering Partners" />
-<link rel="icon" type="image/png" href="./images/the.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-<style>
-:root {
-  --brand: #0f6b5b;
-  --brand-dark: #0b4d42;
-  --accent: #e3a23b;
-  --ink: #0f172a;
-  --muted: #475569;
-  --line: #dbe3ed;
-  --bg: #f8fafc;
-  --card: #ffffff;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.6;
-  color: var(--ink);
-  background: var(--bg);
-}
-
-.container { width: min(1120px, 92%); margin: 0 auto; }
-.section { padding: 88px 0; }
-.section h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 12px; }
-.section-intro { color: var(--muted); max-width: 760px; margin-bottom: 34px; }
-
-/* Nav */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-}
-.nav-inner {
-  height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo img { height: 44px; width: auto; }
-.nav-links { display: flex; gap: 22px; }
-.nav-links a {
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 600;
-  font-size: 0.92rem;
-}
-.nav-links a:hover { color: var(--brand); }
-
-/* Hero */
-.hero {
-  color: #fff;
-  background:
-    linear-gradient(130deg, rgba(9, 19, 35, 0.88), rgba(11, 77, 66, 0.82)),
-    url('./images/Main-Purpose-Of-Solar-Panels-scaled-2560x1280.jpeg.webp') center/cover no-repeat;
-}
-.hero .container { padding: 102px 0 108px; }
-.badge {
-  display: inline-block;
-  border: 1px solid rgba(227, 162, 59, 0.55);
-  background: rgba(227, 162, 59, 0.16);
-  color: #ffdca5;
-  padding: 7px 14px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.hero h1 {
-  font-size: clamp(2.1rem, 4.8vw, 3.8rem);
-  max-width: 850px;
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-.hero p { max-width: 760px; font-size: 1.1rem; color: rgba(255,255,255,0.93); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 13px 20px;
-  border-radius: 10px;
-  font-weight: 700;
-}
-.btn-primary { background: var(--accent); color: #1e293b; }
-.btn-primary:hover { background: #f0b14d; }
-.btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: #fff; }
-
-/* KPI */
-.kpis {
-  margin-top: -36px;
-  position: relative;
-  z-index: 2;
-}
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-.kpi {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 8px 24px rgba(10, 20, 40, 0.08);
-}
-.kpi strong { display: block; font-size: 1.8rem; color: var(--brand); }
-.kpi span { color: var(--muted); font-size: 0.9rem; }
-
-/* Cards */
-.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px;
-}
-.card h3 { margin-bottom: 10px; font-size: 1.17rem; }
-.card p, .card li { color: var(--muted); }
-.card ul { padding-left: 18px; }
-
-/* Split sections */
-.split { display: grid; gap: 34px; grid-template-columns: 1.1fr 0.9fr; align-items: center; }
-.split img {
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-}
-.panel {
-  background: #fefbf4;
-  border: 1px solid #f2dfbc;
-  border-left: 5px solid var(--accent);
-  border-radius: 14px;
-  padding: 22px;
-}
-
-/* Process */
-.process { display: grid; gap: 14px; }
-.step {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 16px 18px;
-}
-.step b { color: var(--brand-dark); }
-
-/* Contact */
-.cta {
-  background: linear-gradient(120deg, #0c1628, #0f2f3c);
-  color: #fff;
-}
-.cta .section-intro { color: rgba(255,255,255,0.85); }
-form {
-  margin-top: 26px;
-  max-width: 680px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-input, textarea, button {
-  font: inherit;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 12px 13px;
-}
-input, textarea { background: rgba(255,255,255,0.08); color: #fff; }
-textarea { grid-column: 1 / -1; min-height: 130px; resize: vertical; }
-button {
-  grid-column: 1 / -1;
-  background: var(--accent);
-  color: #1e293b;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
-footer {
-  background: #07101d;
-  color: rgba(255,255,255,0.7);
-  padding: 26px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.92rem;
-}
-
-@media (max-width: 980px) {
-  .kpi-grid, .grid-3, .split { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 700px) {
-  .nav-links { overflow-x: auto; gap: 14px; }
-  .kpi-grid, .grid-3, .split, form { grid-template-columns: 1fr; }
-  .hero .container { padding: 82px 0 88px; }
-  .section { padding: 68px 0; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repowering Partners | The Future of Solar Assets</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-<nav>
-  <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Repowering Partners home">
-      <img src="./images/the.png" alt="Repowering Partners logo" />
-    </a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#focus">Focus Areas</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+
+    <!-- 3D Vortex Background -->
+    <div class="background-container">
+        <svg id="vortex-bg"></svg>
+        <div class="vignette-overlay"></div>
     </div>
-  </div>
-</nav>
 
-<header class="hero">
-  <div class="container">
-    <span class="badge">Solar Asset Acquisition & Repowering</span>
-    <h1>A trusted partner for acquiring and restoring underperforming solar assets.</h1>
-    <p>Repowering Partners helps owners, lenders, and operators maximize asset value through disciplined diligence, targeted technical upgrades, and operating strategies built for long-term energy yield.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">Schedule a Confidential Review</a>
-      <a class="btn btn-ghost" href="#process">See Our Methodology</a>
-    </div>
-  </div>
-</header>
+    <!-- Main App Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Repowering <span>Partners</span></a>
+            
+            <button class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
 
-<section class="kpis container" aria-label="Company metrics">
-  <div class="kpi-grid">
-    <div class="kpi"><strong>15+ Years</strong><span>Combined solar lifecycle experience</span></div>
-    <div class="kpi"><strong>100+ MW</strong><span>Assets screened and evaluated</span></div>
-    <div class="kpi"><strong>Nationwide</strong><span>Coverage across U.S. power markets</span></div>
-    <div class="kpi"><strong>Operator-First</strong><span>Execution focused on yield improvement</span></div>
-  </div>
-</section>
-
-<main>
-  <section id="about" class="section">
-    <div class="container split">
-      <div>
-        <h2>About Repowering Partners</h2>
-        <p class="section-intro">We specialize in acquiring aging, distressed, and technically challenged solar projects where clear operational improvements can unlock substantial long-term value.</p>
-        <div class="panel">
-          <p>Our work combines commercial discipline and engineering depth. We review production history, contractual constraints, equipment health, and market context to build an actionable value-creation plan before close and an execution roadmap after close.</p>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
-      </div>
-      <img src="./images/Workers-clean-photovoltaic-panels-inside-a-solar-power-plant-in-Gujarat-India.jpg" alt="Team maintaining utility-scale solar facility" />
-    </div>
-  </section>
+    </nav>
 
-  <section id="focus" class="section">
-    <div class="container">
-      <h2>What We Target</h2>
-      <p class="section-intro">Our investment lens is focused on projects where technical optimization, contract structuring, and operational discipline can significantly improve performance and reliability.</p>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Aging & Legacy Assets</h3>
-          <p>Projects reaching mid-to-late lifecycle stages that require inverter, module, or balance-of-plant modernization.</p>
-        </article>
-        <article class="card">
-          <h3>Distressed Situations</h3>
-          <p>Assets with financial, contractual, or ownership complexity where disciplined underwriting can restore bankable value.</p>
-        </article>
-        <article class="card">
-          <h3>Output Underperformance</h3>
-          <p>Sites falling below modeled production due to unresolved technical or O&M execution issues.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    <!-- Page Content -->
+    <main class="container page-content">
+        <section class="hero">
+            <div class="badge">
+                <div class="badge-dot"></div>
+                System Active: Asset Acquisition
+            </div>
+            <h1>Where Solar Assets<br>Get a Second Life.</h1>
+            <p class="lead">We are an established industry leader focused exclusively on buying existing solar farms. We seamlessly acquire, rebuild, and operate industrial infrastructure for the future.</p>
+            <div class="hero-ctas">
+                <a href="contact.html" class="btn">Initiate Transfer</a>
+                <a href="about.html" class="btn btn-outline">View Process</a>
+            </div>
+        </section>
 
-  <section id="capabilities" class="section">
-    <div class="container">
-      <h2>Core Capabilities</h2>
-      <p class="section-intro">From diligence through long-term operations, our integrated approach is designed to reduce risk, accelerate stabilization, and improve asset economics.</p>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Technical Diligence</h3>
-          <ul>
-            <li>Production and degradation analysis</li>
-            <li>Inverter and component health assessment</li>
-            <li>Failure root-cause diagnostics</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Value Engineering</h3>
-          <ul>
-            <li>Repowering scope design</li>
-            <li>Yield and cost-benefit modeling</li>
-            <li>Capex prioritization framework</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Operational Execution</h3>
-          <ul>
-            <li>Stabilization and recovery planning</li>
-            <li>Long-term O&M oversight</li>
-            <li>Performance tracking and optimization</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" class="section">
-    <div class="container split">
-      <img src="./images/installing-solar-panels.webp" alt="Technician servicing solar equipment" />
-      <div>
-        <h2>Our Transaction-to-Operations Process</h2>
-        <p class="section-intro">A clear, repeatable process to convert underperforming sites into stable, high-confidence assets.</p>
-        <div class="process">
-          <div class="step"><b>1. Screen:</b> Rapid qualification based on age, output profile, and ownership context.</div>
-          <div class="step"><b>2. Underwrite:</b> Integrated technical and financial diligence with downside scenario testing.</div>
-          <div class="step"><b>3. Acquire:</b> Efficient transaction execution with transition planning in parallel.</div>
-          <div class="step"><b>4. Repower:</b> Targeted interventions prioritized by yield impact and reliability uplift.</div>
-          <div class="step"><b>5. Optimize:</b> Ongoing monitoring, KPI governance, and continuous performance improvement.</div>
+        <div class="stats-grid">
+            <div class="glass-panel stat-card">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Farms Acquired</div>
+            </div>
+            <div class="glass-panel stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Reliable Execution</div>
+            </div>
+            <div class="glass-panel stat-card">
+                <div class="stat-value">250<span style="font-size: 1.5rem; color: var(--accent);">MW</span></div>
+                <div class="stat-label">Grid Power Revitalized</div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-</main>
 
-<section id="contact" class="cta section">
-  <div class="container">
-    <h2>Discuss an Asset Opportunity</h2>
-    <p class="section-intro">If you own, operate, or finance a solar project with performance or lifecycle challenges, we welcome a confidential conversation.</p>
-    <form action="https://formspree.io/f/xoqgkzlr" method="POST">
-      <input type="hidden" name="_subject" value="New Solar Asset Inquiry" />
-      <input type="hidden" name="_cc" value="Jim.bakhaus@repoweringpartners.com" />
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Tell us about the asset size, location, and key challenges..." required></textarea>
-      <button type="submit">Submit Inquiry</button>
-    </form>
-  </div>
-</section>
+        <div class="glass-panel proof-box">
+            <div>
+                <h2>A Proven Market Force.</h2>
+                <p class="lead" style="font-size: 1.1rem; margin-bottom: 24px;">Our company doesn't just dream of becoming successful—we already are. A multitude of clients are already successfully selling their farms to our reliable enterprise.</p>
+                <p style="color: var(--text-secondary);">We provide instant liquidity to current owners while ensuring the land and grid connection continue to serve sustainable energy needs with vastly upgraded technology.</p>
+            </div>
+            <div>
+                <!-- Decorative Abstract Geometry -->
+                <svg width="100%" height="200" viewBox="0 0 200 200" fill="none" stroke="var(--border-hover)" stroke-width="1">
+                    <circle cx="100" cy="100" r="80" stroke-dasharray="4 4" />
+                    <circle cx="100" cy="100" r="60" stroke="var(--accent)" stroke-width="2" />
+                    <circle cx="100" cy="100" r="40" />
+                    <line x1="20" y1="100" x2="180" y2="100" stroke-dasharray="2 4" />
+                    <line x1="100" y1="20" x2="100" y2="180" stroke-dasharray="2 4" />
+                </svg>
+            </div>
+        </div>
+    </main>
 
-<footer>
-  <div class="container">&copy; 2026 Repowering Partners. Solar asset revitalization with disciplined execution.</div>
-</footer>
+    <footer>
+        <div class="container footer-content">
+            <div>REPOWERING PARTNERS &copy; 2026</div>
+            <div>SYSTEM.STATUS: <span style="color: var(--accent);">OPERATIONAL</span></div>
+        </div>
+    </footer>
+
 </body>
 </html>
